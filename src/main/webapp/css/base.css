@@ -1,0 +1,147 @@
+h1 {
+	line-height: 45px;
+	color: teal;
+	font-size: 50px;
+	font-weight: 900 !important;
+}
+
+h2{
+	text-align: center
+}
+
+h3{
+	font-size: 25px;
+	padding-bottom: 0px;
+	margin-bottom: 0px
+}
+
+h5{
+	font-size: 22px;
+	padding: 0px 0px 0px;
+	line-height: 0px
+}
+
+/* -------------------------------- */
+body {
+	font-family: 'Ruluko', sans-serif;
+	font-size: 14px;
+	background-color: #c0c0c0;
+}
+
+p {
+	padding: 0px 20px 0px;
+	font-size: 18px
+}
+
+#favourites table {
+	padding: 0px 0px 0px;
+	margin-left: 5px;
+}
+
+#contacts{
+	padding: 5px 0px 5px;
+	margin-left: 18px;
+}
+
+/* -------------------------------- */
+
+/* Footer stuff */
+#footer {
+	background-color: #333;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	font: bold 12px sans-serif;
+	text-align: center;
+	color: white;
+	padding: 10px 0px 5px;
+	margin-top: 10px;
+}
+
+/* -------------------------------- */
+
+/* Menu */
+ul.topnav {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #333;
+}
+
+ul.topnav li {
+	float: left;
+}
+
+ul.topnav li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+ul.topnav
+ 
+li
+ 
+a
+:hover
+:not
+ 
+(.active )
+{
+background-color:#111;
+}
+ul.topnav li a.active {
+	background-color: #4CAF50;
+}
+
+ul.topnav ul.right {
+	float: right;
+	list-style-type: none;
+}
+
+@media screen and (max-width: 1024px) {
+	ul.topnav ul.right, ul.topnav li {
+		float: none;
+	}
+}
+
+#submission {
+  text-align: center;
+  }
+
+/* -------------------------------- */
+
+/* login error message */
+.error {
+	padding: 15px;
+	margin-bottom: 20px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	color: #a94442;
+	background-color: #f2dede;
+	border-color: #ebccd1;
+}
+
+.msg {
+	padding: 15px;
+	margin-bottom: 20px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	color: #31708f;
+	background-color: #d9edf7;
+	border-color: #bce8f1;
+}
+
+#login-box {
+	width: 300px;
+	padding: 20px;
+	margin: 100px auto;
+	background: #fff;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border: 1px solid #000;
+}
+/* -------------------------------- */
