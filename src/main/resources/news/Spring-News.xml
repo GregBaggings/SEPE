@@ -3,7 +3,8 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
 	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 
-	<import resource="database/Spring-Datasource.xml" />
-	<import resource="car/Spring-Car.xml" />
-	<import resource="news/Spring-News.xml" />
+	<bean id="newsDAO" class="com.cw.newspublisher.JdbcNewsDAO">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
 </beans>

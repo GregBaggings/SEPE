@@ -6,9 +6,12 @@ import java.util.Map;
 
 import javax.sql.DataSource;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 public class JdbcCarDAO implements CarDAO {
+	private final Logger logger = LoggerFactory.getLogger(JdbcCarDAO.class);
 	private DataSource dataSource;
 
 	public void setDataSource(DataSource dataSource) {
@@ -26,7 +29,6 @@ public class JdbcCarDAO implements CarDAO {
 
 		String sql = "INSERT INTO LIST_OF_CARS " + "(CAR_ID, NAME, AGE, PRICE) VALUES (?, ?, ?, ?)";
 		jdbcTemplate.update(sql, car.getCarId(), car.getName(), car.getAge(), car.getPrice());
-
 	}
 
 	public void updateCar(Car car) {
@@ -41,13 +43,14 @@ public class JdbcCarDAO implements CarDAO {
 		
 		Object[] params = new Object[] { carId };
 		jdbcTemplate.update(sql,params);
+		logger.info("SQL query was: "+sql);
 
 	}
 
 	public List<Car> findByName(String name) {
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 
-		String sql = "SELECT * from LIST_OF_CARS WHERE NAME = "+name;
+		String sql = "SELECT * from LIST_OF_CARS WHERE NAME LIKE %?%";
 		 
 		List<Car> cars = new ArrayList<Car>();
 		
@@ -60,6 +63,7 @@ public class JdbcCarDAO implements CarDAO {
 			car.setPrice((Integer)row.get("PRICE"));
 			cars.add(car);
 		}
+		
 		return cars;
 	}
 }
