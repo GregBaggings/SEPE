@@ -15,7 +15,6 @@
 	<!-- Menu -->
 	<ul class=topnav>
 		<li><a href=/CW />Home Page</a></li>
-		<li><a href=/CW/addNews>News</a></li>
 		<li><a href=/CW/search>Search</a></li>
 		<li><a href=/CW/contact>Contact us</a></li>
 		<ul class="topnav right">
@@ -39,7 +38,7 @@
     </sql:query>
 
 	<!--  new table with design -->
-	<div class="tg-wrap" align="center">
+	<div class="tg-wrap" align="center" table-layout="fixed">
 		<c:forEach var="article" items="${news.rows}">
 			<table class="tg">
 				<tr>

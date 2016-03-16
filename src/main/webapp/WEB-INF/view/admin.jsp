@@ -21,6 +21,7 @@
 	<li><a href=/CW/admin/addCar>Add Product</a></li>
 	<li><a href=/CW/admin/removeCar>Remove Product</a></li>
 	<li><a href="/CW/admin/list">List of the database</a></li>
+	<li><a href="/CW/admin/addNews">Add news to the Home Page</a></li>
 
 	<!-- Logout stuff -->
 	<c:url value="/j_spring_security_logout" var="logoutUrl" />

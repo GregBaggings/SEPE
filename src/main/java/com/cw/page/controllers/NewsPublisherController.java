@@ -15,7 +15,7 @@ import com.cw.newspublisher.NewsDAO;
 @Controller
 public class NewsPublisherController {
 
-	@RequestMapping(value = "/addNews", method = RequestMethod.GET)
+	@RequestMapping(value = "/admin/addNews", method = RequestMethod.GET)
 	public ModelAndView addNews() {
 		return new ModelAndView("addNews", "command", new NewsArticle());
 	}
@@ -36,6 +36,6 @@ public class NewsPublisherController {
 
 		newsDAO.createNews(news);
 
-		return "index";	
+		return "admin";	
 	}
 }

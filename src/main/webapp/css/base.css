@@ -81,75 +81,10 @@ ul.topnav li a {
 	text-decoration: none;
 }
 
-ul
-
-
-
-
-.topnav
-
-
-
- 
-
-
-
-li
-
-
-
- 
-
-
-
-a
-
-
-
-
-
-
-:hover
-
-
-
-
-
-
-:not
-
-
-
- 
-
-
-
-(
-.active
-
-
- 
-
-
-)
-{
-background-color
-
-
-
-
-:
-
-
-
-
-#111
-
-
-
-
-;
+ul.topnav li a:hover:not(.active){
+background-color:#111;
 }
+
 ul.topnav li a.active {
 	background-color: #4CAF50;
 }
@@ -208,6 +143,7 @@ ul.topnav ul.right {
 	border-collapse: collapse;
 	border-spacing: 0;
 	margin: 0px auto;
+	
 }
 
 .tg td {
@@ -218,6 +154,11 @@ ul.topnav ul.right {
 	border-width: 1px;
 	overflow: hidden;
 	word-break: normal;
+	table-layout: fixed;
+	width:500px;
+	padding-top: 5px;
+    padding-bottom: 5px;
+    border-spacing: 2px;
 }
 
 .tg th {
