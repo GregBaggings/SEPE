@@ -1,4 +1,5 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -16,9 +17,9 @@
 		<li><a href=/CW />Home Page</a></li>
 		<li><a href=/CW/search>Search</a></li>
 		<li><a href=/CW/contact>Contact us</a></li>
-			<ul class="topnav right">
-				<li><a href=/CW/login>Login</a></li>
-			</ul>
+		<ul class="topnav right">
+			<li><a href=/CW/login>Login</a></li>
+		</ul>
 	</ul>
 
 	<!-- Header -->
@@ -28,30 +29,32 @@
 
 	<!-- News and other content -->
 	<p>News:</p>
+	<sql:setDataSource var="myDS" driver="com.mysql.jdbc.Driver"
+		url="${initParam['dbWebaddress']}" user="${initParam['dbUser']}"
+		password="${initParam['dbPassword']}" />
 
+	<sql:query var="news" dataSource="${myDS}">
+        SELECT * FROM NEWS ORDER BY DATE DESC LIMIT 5;
+    </sql:query>
 
-
-	<!-- Favourites section -->
-	<div id=favourites>
-		<p>Most favorite offers:</p>
-		<table border="1" style="width: 50%">
-			<tr>
-				<th>Cars</th>
-				<th>Parts</th>
-			</tr>
-			<tr>
-				<td>Example - Audi</td>
-				<td>Example3</td>
-			</tr>
-			<tr>
-				<td>Example - BMW</td>
-				<td>Example3</td>
-			</tr>
-			<tr>
-				<td>Example - SEAT</td>
-				<td>Example3</td>
-			</tr>
-		</table>
+	<!--  new table with design -->
+	<div class="tg-wrap" align="center" table-layout="fixed">
+		<c:forEach var="article" items="${news.rows}">
+			<table class="tg">
+				<tr>
+					<th class="tg-news-date" colspan="2"><c:out
+							value="${article.date}" /></th>
+				</tr>
+				<tr>
+					<td class="tg-news-title" colspan="2"><c:out
+							value="${article.title}" /></td>
+				</tr>
+				<tr>
+					<td class="tg-news-content" colspan="2"><c:out
+							value="${article.content}" /></td>
+				</tr>
+			</table>
+		</c:forEach>
 	</div>
 
 	<!-- Footer -->

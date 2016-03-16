@@ -1,5 +1,7 @@
 package com.cw.page.controllers;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Controller;
@@ -14,6 +16,7 @@ import com.cw.database.model.CarDAO;
 
 @Controller
 public class RemoveItemController {
+	private final Logger logger = LoggerFactory.getLogger(RemoveItemController.class);
 	
 	@RequestMapping(value = "/admin/removeCar", method = RequestMethod.GET)
 	public ModelAndView removeCar() {
@@ -34,7 +37,7 @@ public class RemoveItemController {
 
 
 		carDAO.deleteCar(car.getCarId());
-
+		logger.debug("Deleted item was: "+ model.get("carID"));
 		return "list_items";	
 	}
 }

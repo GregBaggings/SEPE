@@ -5,17 +5,17 @@ h1 {
 	font-weight: 900 !important;
 }
 
-h2{
+h2 {
 	text-align: center
 }
 
-h3{
+h3 {
 	font-size: 25px;
 	padding-bottom: 0px;
 	margin-bottom: 0px
 }
 
-h5{
+h5 {
 	font-size: 22px;
 	padding: 0px 0px 0px;
 	line-height: 0px
@@ -38,7 +38,7 @@ p {
 	margin-left: 5px;
 }
 
-#contacts{
+#contacts {
 	padding: 5px 0px 5px;
 	margin-left: 18px;
 }
@@ -81,18 +81,10 @@ ul.topnav li a {
 	text-decoration: none;
 }
 
-ul.topnav
- 
-li
- 
-a
-:hover
-:not
- 
-(.active )
-{
+ul.topnav li a:hover:not(.active){
 background-color:#111;
 }
+
 ul.topnav li a.active {
 	background-color: #4CAF50;
 }
@@ -109,8 +101,8 @@ ul.topnav ul.right {
 }
 
 #submission {
-  text-align: center;
-  }
+	text-align: center;
+}
 
 /* -------------------------------- */
 
@@ -145,3 +137,69 @@ ul.topnav ul.right {
 	border: 1px solid #000;
 }
 /* -------------------------------- */
+
+/* news table design */
+.tg {
+	border-collapse: collapse;
+	border-spacing: 0;
+	margin: 0px auto;
+	
+}
+
+.tg td {
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+	padding: 10px 5px;
+	border-style: solid;
+	border-width: 1px;
+	overflow: hidden;
+	word-break: normal;
+	table-layout: fixed;
+	width:500px;
+	padding-top: 5px;
+    padding-bottom: 5px;
+    border-spacing: 2px;
+}
+
+.tg th {
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+	font-weight: normal;
+	padding: 10px 5px;
+	border-style: solid;
+	border-width: 1px;
+	overflow: hidden;
+	word-break: normal;
+}
+
+.tg .tg-news-date {
+	text-align: right;
+	vertical-align: top
+}
+
+.tg .tg-news-title {
+	text-align: left;
+	vertical-align: top;
+	font-weight: bold;
+	font-style: italic;
+}
+
+.tg .tg-news-content {
+	text-align: left;
+	vertical-align: top;
+	font-style: oblique;
+}
+
+@media screen and (max-width: 1024px) {
+	.tg {
+		width: auto !important;
+	}
+	.tg col {
+		width: auto !important;
+	}
+	.tg-wrap {
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+		margin: auto 0px;
+	}
+}
