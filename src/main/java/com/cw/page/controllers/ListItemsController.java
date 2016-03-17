@@ -2,22 +2,28 @@ package com.cw.page.controllers;
 
 import java.security.Principal;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
+
+import com.cw.database.model.CarDAO;
 
 @Controller
 public class ListItemsController {
-	   @RequestMapping(value = "/admin/list", method = RequestMethod.GET)
-	   public ModelAndView contactPage(Principal loginChecker) {
-		   ModelAndView model = new ModelAndView();
+	
+	@Autowired
+	CarDAO carDAO;
+	
+	   @RequestMapping(value = {"/admin/list","/admin/list_items"}, method = RequestMethod.GET)
+	   public String list(Principal loginChecker, ModelMap model) {
 			if (loginChecker != null) {
-				model.setViewName("list_items");
+				model.addAttribute("list", carDAO.findAll());
+				return "list_items";
 			} else {
-				ModelAndView notLoggedIn = new ModelAndView("redirect:/");
-				return notLoggedIn;
+
+				return "redirect:/";
 			}
-			return model;
 	   }
 }

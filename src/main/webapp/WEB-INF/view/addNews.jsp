@@ -1,4 +1,4 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <html>
 <head>
@@ -43,7 +43,7 @@
 		</table>
 	</form:form>
 
-	<c:url value="/j_spring_security_logout" var="logoutUrl" />
+	<c:url value="/logout" var="logoutUrl" />
 
 	<!-- csrt for log out-->
 	<form action="${logoutUrl}" method="post" id="logoutForm">

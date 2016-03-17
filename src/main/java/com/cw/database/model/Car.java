@@ -1,16 +1,23 @@
 package com.cw.database.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity(name="list_of_cars")
 public class Car {
-	int carId;
+	@Id
+	@GeneratedValue
+	Integer carId;
 	String name;
 	int age;
 	int price;
 
-	public int getCarId() {
+	public Integer getCarId() {
 		return carId;
 	}
 
-	public void setCarId(int carId) {
+	public void setCarId(Integer carId) {
 		this.carId = carId;
 	}
 
