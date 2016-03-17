@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
     "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -22,13 +21,6 @@
 			<li><a href="javascript:formSubmit()">Logout</a></li>
 		</ul>
 	</ul>
-	<sql:setDataSource var="myDS" driver="com.mysql.jdbc.Driver"
-		url="${initParam['dbWebaddress']}" user="${initParam['dbUser']}"
-		password="${initParam['dbPassword']}" />
-
-	<sql:query var="cars" dataSource="${myDS}">
-        SELECT * FROM list_of_cars;
-    </sql:query>
 
 	<div align="center">
 		<table border="1" cellpadding="5">
@@ -41,9 +33,9 @@
 				<th>Age</th>
 				<th>Price</th>
 			</tr>
-			<c:forEach var="car" items="${cars.rows}">
+		<c:forEach var="car" items="${list}">
 				<tr>
-					<td><c:out value="${car.car_id}" /></td>
+					<td><c:out value="${car.carId}" /></td>
 					<td><c:out value="${car.name}" /></td>
 					<td><c:out value="${car.age}" /></td>
 					<td><c:out value="${car.price}" /></td>
@@ -53,7 +45,7 @@
 	</div>
 	
 	
-		<c:url value="/j_spring_security_logout" var="logoutUrl" />
+		<c:url value="/logout" var="logoutUrl" />
 
 	<!-- csrt for log out-->
 	<form action="${logoutUrl}" method="post" id="logoutForm">

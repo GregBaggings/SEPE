@@ -1,5 +1,4 @@
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -14,7 +13,7 @@
 
 	<!-- Menu -->
 	<ul class=topnav>
-		<li><a href=/CW />Home Page</a></li>
+		<li><a href=/CW/>Home Page</a></li>
 		<li><a href=/CW/search>Search</a></li>
 		<li><a href=/CW/contact>Contact us</a></li>
 		<ul class="topnav right">
@@ -29,17 +28,10 @@
 
 	<!-- News and other content -->
 	<p>News:</p>
-	<sql:setDataSource var="myDS" driver="com.mysql.jdbc.Driver"
-		url="${initParam['dbWebaddress']}" user="${initParam['dbUser']}"
-		password="${initParam['dbPassword']}" />
 
-	<sql:query var="news" dataSource="${myDS}">
-        SELECT * FROM NEWS ORDER BY DATE DESC LIMIT 5;
-    </sql:query>
-
-	<!--  new table with design -->
+	<!--  news table with design -->
 	<div class="tg-wrap" align="center" table-layout="fixed">
-		<c:forEach var="article" items="${news.rows}">
+		<c:forEach var="article" items="${news_list}">
 			<table class="tg">
 				<tr>
 					<th class="tg-news-date" colspan="2"><c:out

@@ -1,5 +1,4 @@
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <html>
 <head>
@@ -17,22 +16,7 @@
 			<li><a href=/CW/login>Login</a></li>
 		</ul>
 	</ul>
-<!-- 	<h2>Results of your search:</h2> -->
-<!-- 	<table> -->
-<!-- 		<tr> -->
-<!-- 			<td>Name</td> -->
-<%-- 			<td>${searchKey}</td> --%>
-<!-- 		</tr> -->
-<!-- 	</table> -->
 
-	<sql:setDataSource var="myDS" driver="com.mysql.jdbc.Driver"
-		url="${initParam['dbWebaddress']}" user="${initParam['dbUser']}"
-		password="${initParam['dbPassword']}" />
-
-	<sql:query var="cars" dataSource="${myDS}">
-        SELECT * FROM list_of_cars where NAME = '${searchKey}';
-    </sql:query>
-    
     	<div align="center">
 		<table border="1" cellpadding="5">
 			<caption>
@@ -44,9 +28,9 @@
 				<th>Age</th>
 				<th>Price in GBP</th>
 			</tr>
-			<c:forEach var="car" items="${cars.rows}">
+			<c:forEach var="car" items="${list}">
 				<tr>
-					<td><c:out value="${car.car_id}" /></td>
+					<td><c:out value="${car.carId}" /></td>
 					<td><c:out value="${car.name}" /></td>
 					<td><c:out value="${car.age}" /></td>
 					<td><c:out value="${car.price}" /></td>

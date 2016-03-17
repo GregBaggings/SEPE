@@ -1,18 +1,22 @@
 package com.cw.page.controllers;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.cw.newspublisher.NewsDAO;
+
 @Controller
 public class HomePageController {
-	private final Logger logger = LoggerFactory.getLogger(HomePageController.class);
-
+	
+	@Autowired
+	NewsDAO newsDAO;
+	
 	   @RequestMapping(value = {"/", "/index"}, method = RequestMethod.GET)
-	   public String homePage() {
-		  logger.debug("Homepage loaded."); //logger test
+	   public String homePage(ModelMap model) {
+		   model.addAttribute("news_list", newsDAO.findTop5ByOrderByDateDecs());
 	      return "index";
 	   }
 }

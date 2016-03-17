@@ -1,4 +1,4 @@
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page session="true"%>
 <html>
 <head>
@@ -24,7 +24,7 @@
 	<li><a href="/CW/admin/addNews">Add news to the Home Page</a></li>
 
 	<!-- Logout stuff -->
-	<c:url value="/j_spring_security_logout" var="logoutUrl" />
+	<c:url value="/logout" var="logoutUrl" />
 
 	<!-- csrt for log out -->
 	<form action="${logoutUrl}" method="post" id="logoutForm">

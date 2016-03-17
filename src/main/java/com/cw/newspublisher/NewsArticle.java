@@ -2,8 +2,15 @@ package com.cw.newspublisher;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity(name="news")
 public class NewsArticle {
-	int newsId;
+	@Id
+	@GeneratedValue
+	Integer newsId;
 	Date date = new Date();
 	String title;
 	String content;
@@ -25,10 +32,10 @@ public class NewsArticle {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public int getNewsId() {
+	public Integer getNewsId() {
 		return newsId;
 	}
-	public void setNewsId(int newsId) {
+	public void setNewsId(Integer newsId) {
 		this.newsId = newsId;
 	}
 }
