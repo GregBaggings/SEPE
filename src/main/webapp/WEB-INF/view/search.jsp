@@ -17,19 +17,17 @@
     <li><a href=/CW/login>Login</a></li>
   </ul>
 </ul> 
-	<h2>Please enter your search keyword</h2>
+<div id=search>
 	<form:form method="POST" action="/CW/searchResult">
 		<table>
 			<tr>
 				<td><form:label path="searchKey">Search for:</form:label></td>
-				<td><form:input path="searchKey" /></td>
-			</tr>
-			<tr>
-				<td colspan="2"><input type="submit" value="Search" /></td>
+				<td><form:input path="searchKey"/></td>
+				<td colspan="2"><p id="submission"><input type="submit" value="Search"/></td>
 			</tr>
 		</table>
 	</form:form>
-	
+</div>	
 		<!-- Footer -->
 	<div id="footer">
 		<p>Copyright 2016 &copy; Gergely Agnecz</p>

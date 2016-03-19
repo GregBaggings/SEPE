@@ -27,11 +27,14 @@
 		<p>+48 123931700
 		<h5>Address:</h5>
 		<p>Starway to Heaven street 17. 1235, Wonderland</p>
+		
+		<br>
+		
 		<h2>In any needs or questions don't hesitate to contact us on the
 			following link:</h2>
-		<p>
+		<p align="center">
 			<a href="mailto:sales@minerva.com?Subject=Inquiry about: <item_to_name>"
-				target="_top">E-mail to sales</a>
+				target="_top"><big><b>E-mail to sales</b></big></a>
 		</p>
 
 	</div>
