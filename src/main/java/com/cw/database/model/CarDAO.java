@@ -15,12 +15,10 @@ public class CarDAO{
 
 	public void updateCar(Car car) {
 		carRepo.save(car);
-
 	}
 
 	public void deleteCar(int carId) {
 		carRepo.delete(carId);
-
 	}
 
 	public List<Car> findByName(String name) {

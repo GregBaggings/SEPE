@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <c:url value="/css/base.css" var="cssURL" />
 <link rel="stylesheet" href="${cssURL}">
-<title>Add new Car to the database</title>
+<title>Remove News</title>
 </head>
 <body>
 	<!-- Menu -->
@@ -18,23 +18,15 @@
 			<li><a href="javascript:formSubmit()">Logout</a></li>
 		</ul>
 	</ul>
-	<h2>Please enter the car details:</h2>
-	<form:form method="POST" action="/CW/admin/list_items">
+	<h2>Please enter the news title to delete:</h2>
+	<form:form method="POST" action="/CW/admin/deleteNews">
 		<table>
 			<tr>
-				<td><form:label path="name">name</form:label></td>
-				<td><form:input path="name" /></td>
+				<td><form:label path="newsId">newsID</form:label></td>
+				<td><form:input path="newsId" /></td>
 			</tr>
 			<tr>
-				<td><form:label path="age">age</form:label></td>
-				<td><form:input path="age" /></td>
-			</tr>
-			<tr>
-				<td><form:label path="price">price</form:label></td>
-				<td><form:input path="price" /></td>
-			</tr>
-			<tr>
-				<td colspan="2"><input type="submit" value="Add Item" /></td>
+				<td colspan="2"><input type="submit" value="Delete" /></td>
 			</tr>
 		</table>
 	</form:form>

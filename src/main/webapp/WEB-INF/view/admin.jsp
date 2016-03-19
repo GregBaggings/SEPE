@@ -4,6 +4,7 @@
 <head>
 <c:url value="/css/base.css" var="cssURL" />
 <link rel="stylesheet" href="${cssURL}">
+<title>Admin Page</title>
 </head>
 <body>
 	<!-- Menu -->
@@ -22,6 +23,7 @@
 	<li><a href=/CW/admin/removeCar>Remove Product</a></li>
 	<li><a href="/CW/admin/list">List of the database</a></li>
 	<li><a href="/CW/admin/addNews">Add news to the Home Page</a></li>
+	<li><a href="/CW/admin/removeNews">Remove News from the Home Page</a></li>
 
 	<!-- Logout stuff -->
 	<c:url value="/logout" var="logoutUrl" />

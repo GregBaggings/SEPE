@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <c:url value="/css/base.css" var="cssURL" />
 <link rel="stylesheet" href="${cssURL}">
-<title>SQL Remove</title>
+<title>Remove Product</title>
 </head>
 <body>
 	<!-- Menu -->

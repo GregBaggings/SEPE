@@ -8,5 +8,4 @@ public interface NewsRepository extends CrudRepository<News, Integer>{
 
 	List<News> findByTitle(String title);
 	List<News> findTop5ByOrderByDateDesc();
-	
 }

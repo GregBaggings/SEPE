@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <c:url value="/css/base.css" var="cssURL" />
 <link rel="stylesheet" href="${cssURL}">
-<title>News table SQL Update</title>
+<title>Add new News to the Home Page</title>
 </head>
 <body>
 	<!-- Menu -->
