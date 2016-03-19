@@ -20,7 +20,7 @@
     	<div align="center">
 		<table border="1" cellpadding="5">
 			<caption>
-				<h2>Content of the list of cars table:</h2>
+				<h2>Result of the search:</h2>
 			</caption>
 			<tr>
 				<th>Car ID</th>
