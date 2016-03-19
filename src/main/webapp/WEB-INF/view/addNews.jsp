@@ -38,7 +38,7 @@
 				<td><form:input path="content" /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><input type="submit" value="Submit" /></td>
+				<td colspan="2"><input type="submit" value="Push News" /></td>
 			</tr>
 		</table>
 	</form:form>

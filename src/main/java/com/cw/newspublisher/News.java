@@ -7,7 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity(name="news")
-public class NewsArticle {
+public class News {
 	@Id
 	@GeneratedValue
 	Integer newsId;

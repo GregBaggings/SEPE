@@ -34,7 +34,7 @@
 				<td><form:input path="price" /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><input type="submit" value="Submit" /></td>
+				<td colspan="2"><input type="submit" value="Add Item" /></td>
 			</tr>
 		</table>
 	</form:form>

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.cw.newspublisher.NewsDAO;
-import com.cw.newspublisher.NewsArticle;
+import com.cw.newspublisher.News;
 
 @Controller
 public class NewsPublisherController {
@@ -18,11 +18,11 @@ public class NewsPublisherController {
 
 	@RequestMapping(value = "/admin/addNews", method = RequestMethod.GET)
 	public ModelAndView addNews() {
-		return new ModelAndView("addNews", "command", new NewsArticle());
+		return new ModelAndView("addNews", "command", new News());
 	}
 	
 	@RequestMapping(value = "/", method = RequestMethod.POST)
-	public String addCar(@ModelAttribute("SpringWeb") NewsArticle news, ModelMap model){
+	public String addCar(@ModelAttribute("SpringWeb") News news, ModelMap model){
 
 		model.addAttribute("newId", news.getNewsId());
 		model.addAttribute("date", news.getDate());

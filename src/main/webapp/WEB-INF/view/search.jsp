@@ -25,7 +25,7 @@
 				<td><form:input path="searchKey" /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><input type="submit" value="Submit" /></td>
+				<td colspan="2"><input type="submit" value="Search" /></td>
 			</tr>
 		</table>
 	</form:form>

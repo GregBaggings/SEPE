@@ -4,9 +4,9 @@ import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
 
-public interface NewsRepository extends CrudRepository<NewsArticle, Integer>{
+public interface NewsRepository extends CrudRepository<News, Integer>{
 
-	List<NewsArticle> findByTitle(String title);
-	List<NewsArticle> findTop5ByOrderByDateDesc();
+	List<News> findByTitle(String title);
+	List<News> findTop5ByOrderByDateDesc();
 	
 }

@@ -26,7 +26,7 @@
 				<td><form:input path="carId" /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><input type="submit" value="Submit" /></td>
+				<td colspan="2"><input type="submit" value="Delete" /></td>
 			</tr>
 		</table>
 	</form:form>

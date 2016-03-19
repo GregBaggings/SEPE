@@ -10,15 +10,15 @@ public class NewsDAO {
 	@Autowired
 	private NewsRepository newsRepo;
 
-	public List<NewsArticle> findByTitle(String title) {
+	public List<News> findByTitle(String title) {
 		return newsRepo.findByTitle(title);
 	}
 
-	public void createNews(NewsArticle news) {
+	public void createNews(News news) {
 		newsRepo.save(news);
 	}
 
-	public List<NewsArticle> findTop5ByOrderByDateDecs() {
+	public List<News> findTop5ByOrderByDateDecs() {
 		return newsRepo.findTop5ByOrderByDateDesc();
 	}
 
