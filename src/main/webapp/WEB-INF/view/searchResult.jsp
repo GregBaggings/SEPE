@@ -37,6 +37,8 @@
 				</tr>
 			</c:forEach>
 		</table>
+		
+		<a href=/CW/search>Back to the search</a>
 
 	<!-- Footer -->
 	<div id="footer">
