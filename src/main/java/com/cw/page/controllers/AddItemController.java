@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.cw.database.model.Car;
-import com.cw.database.model.CarDAO;
+import com.cw.database.cars.Car;
+import com.cw.database.cars.CarDAO;
 
 @Controller
 public class AddItemController {

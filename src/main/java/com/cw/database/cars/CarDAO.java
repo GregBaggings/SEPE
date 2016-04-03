@@ -1,4 +1,4 @@
-package com.cw.database.model;
+package com.cw.database.cars;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;

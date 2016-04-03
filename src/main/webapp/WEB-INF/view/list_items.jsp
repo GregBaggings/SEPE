@@ -33,7 +33,7 @@
 				<th>Age</th>
 				<th>Price</th>
 			</tr>
-		<c:forEach var="car" items="${list}">
+			<c:forEach var="car" items="${list_cars}">
 				<tr>
 					<td><c:out value="${car.carId}" /></td>
 					<td><c:out value="${car.name}" /></td>
@@ -43,9 +43,8 @@
 			</c:forEach>
 		</table>
 	</div>
-	
-	
-		<c:url value="/logout" var="logoutUrl" />
+
+	<c:url value="/logout" var="logoutUrl" />
 
 	<!-- csrt for log out-->
 	<form action="${logoutUrl}" method="post" id="logoutForm">

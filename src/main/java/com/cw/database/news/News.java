@@ -1,4 +1,4 @@
-package com.cw.newspublisher;
+package com.cw.database.news;
 
 import java.util.Date;
 
@@ -14,6 +14,7 @@ public class News {
 	Date date = new Date();
 	String title;
 	String content;
+	
 	public Date getDate() {
 		return date;
 	}

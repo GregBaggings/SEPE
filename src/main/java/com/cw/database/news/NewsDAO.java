@@ -1,4 +1,4 @@
-package com.cw.newspublisher;
+package com.cw.database.news;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,5 +24,9 @@ public class NewsDAO {
 
 	public void deleteNews(int newsID) {
 		newsRepo.delete(newsID);
+	}
+
+	public List<News> findAll() {
+		return newsRepo.findAll();
 	}
 }
