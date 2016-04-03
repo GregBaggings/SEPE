@@ -43,6 +43,50 @@
 			</c:forEach>
 		</table>
 	</div>
+	
+	<div align="center">
+		<table border="1" cellpadding="5">
+			<caption>
+				<h2>Content of the list of services table:</h2>
+			</caption>
+			<tr>
+				<th>Service ID</th>
+				<th>Name</th>
+				<th>Is on Stock?</th>
+				<th>Price</th>
+			</tr>
+		<c:forEach var="service" items="${list_services}">
+				<tr>
+					<td><c:out value="${service.serviceId}" /></td>
+					<td><c:out value="${service.name}" /></td>
+					<td><c:out value="${service.onStock}" /></td>
+					<td><c:out value="${service.price}" /></td>
+				</tr>
+			</c:forEach>
+		</table>
+	</div>
+	
+		<div align="center">
+		<table border="1" cellpadding="5">
+			<caption>
+				<h2>Content of the list of news table:</h2>
+			</caption>
+			<tr>
+				<th>news ID</th>
+				<th>Title</th>
+				<th>Content</th>
+				<th>Date</th>
+			</tr>
+		<c:forEach var="news" items="${list_news}">
+				<tr>
+					<td><c:out value="${news.newsId}" /></td>
+					<td><c:out value="${news.date}" /></td>
+					<td><c:out value="${news.title}" /></td>
+					<td><c:out value="${news.content}" /></td>
+				</tr>
+			</c:forEach>
+		</table>
+	</div>
 
 	<c:url value="/logout" var="logoutUrl" />
 
