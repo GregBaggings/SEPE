@@ -7,8 +7,14 @@ import org.springframework.stereotype.Component;
 @Component
 public class NewsDAO {
 
-	@Autowired
+	
 	private NewsRepository newsRepo;
+	
+	@Autowired
+	public NewsDAO(NewsRepository newsRepo) {
+		super();
+		this.newsRepo = newsRepo;
+	}
 
 	public List<News> findByTitle(String title) {
 		return newsRepo.findByTitle(title);

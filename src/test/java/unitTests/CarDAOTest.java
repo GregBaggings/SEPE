@@ -1,4 +1,4 @@
-package com.cw.database.cars;
+package unitTests;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,6 +9,10 @@ import org.mockito.MockitoAnnotations;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
+import com.cw.database.cars.Car;
+import com.cw.database.cars.CarDAO;
+import com.cw.database.cars.CarRepository;
 
 public class CarDAOTest {
 	@Mock
@@ -22,33 +26,35 @@ public class CarDAOTest {
 	}
 
 	@Test
-	public void CarDAO() {
+	public void deleteCar() {
 		// GIVEN
+		int dummyId = 1;
 		// WHEN
+		dao.deleteCar(dummyId);
 		// THEN
+		Mockito.verify(mock).delete(dummyId);
 	}
 
-	// @Test
-	// public void deleteCar() {
-	// throw new RuntimeException("Test not implemented");
-	// }
-	//
-	// @Test
-	// public void findAll() {
-	// throw new RuntimeException("Test not implemented");
-	// }
+	 @Test
+	 public void findAll() {
+			// GIVEN
+			// WHEN
+			dao.findAll();
+			// THEN
+			Mockito.verify(mock).findAll();
+	 }
 
 	@Test
 	public void findByName() {
 		// GIVEN
 		String dummy = "Audi";
-		ArrayList<Car> expList= new ArrayList<Car>();
+		ArrayList<Car> expList = new ArrayList<Car>();
 		Mockito.when(mock.findAllByName(dummy)).thenReturn(expList);
 		// WHEN
-		List <Car> actList = dao.findByName(dummy);
-		//THEN
+		List<Car> actList = dao.findByName(dummy);
+		// THEN
 		Mockito.verify(mock).findAllByName(dummy);
-		Assert.assertEquals(actList,expList);
+		Assert.assertEquals(actList, expList);
 	}
 
 	@Test
@@ -61,8 +67,13 @@ public class CarDAOTest {
 		Mockito.verify(mock).save(dummy);
 	}
 
-	// @Test
-	// public void updateCar() {
-	// throw new RuntimeException("Test not implemented");
-	// }
+	@Test
+	public void updateCar() {
+		// GIVEN
+		Car dummy = new Car();
+		// WHEN
+		dao.updateCar(dummy);
+		// THEN
+		Mockito.verify(mock).save(dummy);
+	}
 }
