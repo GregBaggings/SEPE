@@ -5,9 +5,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ServiceDAO{
-	@Autowired
+public class ServiceDAO {
+
 	private ServiceRepository serviceRepo;
+
+	@Autowired
+	public ServiceDAO(ServiceRepository serviceRepo) {
+		super();
+		this.serviceRepo = serviceRepo;
+	}
 
 	public void saveNewService(Service service) {
 		serviceRepo.save(service);
@@ -24,8 +30,8 @@ public class ServiceDAO{
 	public List<Service> findByName(String name) {
 		return serviceRepo.findAllByName(name);
 	}
-	
-	public List<Service> findAll(){
-	return serviceRepo.findAll();
+
+	public List<Service> findAll() {
+		return serviceRepo.findAll();
 	}
 }
