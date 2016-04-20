@@ -7,7 +7,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class NewsDAO {
 
-	
 	private NewsRepository newsRepo;
 	
 	@Autowired
@@ -24,7 +23,7 @@ public class NewsDAO {
 		newsRepo.save(news);
 	}
 
-	public List<News> findTop5ByOrderByDateDecs() {
+	public List<News> findTop5ByOrderByDateDesc() {
 		return newsRepo.findTop5ByOrderByDateDesc();
 	}
 

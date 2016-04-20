@@ -19,8 +19,8 @@ public class Service {
 	int price;
 
 	// this annotation is necessary for the table connect
-	@OneToMany(mappedBy = "serviceId")
-	List<Car> carList;
+	//@OneToMany(mappedBy = "serviceId")
+	//List<Car> carList;
 
 	public Integer getServiceId() {
 		return serviceId;
