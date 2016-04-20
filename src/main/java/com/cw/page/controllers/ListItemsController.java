@@ -30,7 +30,6 @@ public class ListItemsController {
 				model.addAttribute("list_news", newsDAO.findAll());
 				return "list_items";
 			} else {
-
 				return "redirect:/";
 			}
 	   }

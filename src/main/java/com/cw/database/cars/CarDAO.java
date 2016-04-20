@@ -6,8 +6,14 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class CarDAO{
-	@Autowired
+
 	private CarRepository carRepo;
+
+	@Autowired
+	public CarDAO(CarRepository carRepo) {
+		super();
+		this.carRepo = carRepo;
+	}
 
 	public void saveNewCar(Car car) {
 		carRepo.save(car);

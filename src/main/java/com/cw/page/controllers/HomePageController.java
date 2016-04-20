@@ -1,22 +1,33 @@
 package com.cw.page.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.cw.database.news.News;
 import com.cw.database.news.NewsDAO;
 
 @Controller
 public class HomePageController {
-	
+
 	@Autowired
 	NewsDAO newsDAO;
-	
-	   @RequestMapping(value = {"/", "/index"}, method = RequestMethod.GET)
-	   public String homePage(ModelMap model) {
-		   model.addAttribute("news_list", newsDAO.findTop5ByOrderByDateDecs());
-	      return "index";
-	   }
+
+	@ModelAttribute(value = "news_list")
+	public List<News> getNewsList() {
+		return newsDAO.findAll();
+
+	}
+
+	@RequestMapping(value = { "/", "/index" }, method = RequestMethod.GET)
+	public String homePage(ModelMap model) {
+		newsDAO.findTop5ByOrderByDateDesc();
+		// model.addAttribute("news_list", newsDAO.findTop5ByOrderByDateDesc());
+		return "index";
+	}
 }
