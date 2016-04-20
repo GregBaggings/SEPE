@@ -22,7 +22,7 @@ public class NewsPublisherController {
 	}
 	
 	@RequestMapping(value = "/", method = RequestMethod.POST)
-	public String addCar(@ModelAttribute("SpringWeb") News news, ModelMap model){
+	public String addNews(@ModelAttribute("SpringWeb") News news, ModelMap model){
 
 		model.addAttribute("newId", news.getNewsId());
 		model.addAttribute("date", news.getDate());

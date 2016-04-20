@@ -12,6 +12,7 @@ public class ContactPageIT {
 	@Test
 	public void contactPageTest(){
 		WebDriver driver = new FirefoxDriver();
+		driver.manage().window().maximize();
 		driver.get(CONTACT_PAGE);
 		driver.getPageSource().contains("E-Mail");
 		driver.getPageSource().contains("Phone");

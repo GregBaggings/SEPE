@@ -13,6 +13,7 @@ public class HomePageIT {
 	@Test
 	public void homePageTest(){
 		WebDriver driver = new FirefoxDriver();
+		driver.manage().window().maximize();
 		driver.get(HOME_PAGE);
 		driver.getPageSource().contains("Minerva's car store - The best deals anywhere");
 		driver.quit();

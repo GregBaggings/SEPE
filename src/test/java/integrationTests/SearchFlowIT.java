@@ -11,6 +11,7 @@ public class SearchFlowIT {
 	@Test
 	public void searchFlowTest(){
 		WebDriver driver = new FirefoxDriver();
+		driver.manage().window().maximize();
 		driver.get(SEACRH_PAGE);
 		driver.findElement(By.name("searchKey")).sendKeys("Audi");
 		driver.findElement(By.id("submission")).click();
