@@ -10,7 +10,6 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import com.cw.database.cars.Car;
 import com.cw.database.services.Service;
 import com.cw.database.services.ServiceDAO;
 import com.cw.database.services.ServiceRepository;
