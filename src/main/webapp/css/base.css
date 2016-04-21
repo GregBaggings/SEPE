@@ -206,7 +206,7 @@ ul.topnav ul.right {
 	.tg-wrap {
 		overflow-x: auto;
 		-webkit-overflow-scrolling: touch;
-		margin: auto 0px;
+		margin: 25px;
 	}
 }
 /* -------------------------------- */
@@ -218,3 +218,21 @@ ul.topnav ul.right {
 	width:600px; 
 	padding: 50px 50px 15px;
 	}
+	
+/* -------------------------------- */
+#pc-left{
+	float:left;
+	height:100px;
+	width:100px; 
+	padding: 50px 50px 15px;
+	}
+	
+#pc-right{
+	float:right; 
+	padding: 50px 50px 15px;
+	}
+	
+#news_table{
+	float:left;
+	margin-left: 240px;
+	}	
