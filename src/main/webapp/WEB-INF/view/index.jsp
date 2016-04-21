@@ -10,10 +10,9 @@
 
 </head>
 <body>
-
 	<!-- Menu -->
 	<ul class=topnav>
-		<li><a href=/CW/>Home Page</a></li>
+		<li><a href=/CW />Home Page</a></li>
 		<li><a href=/CW/search>Search</a></li>
 		<li><a href=/CW/contact>Contact us</a></li>
 		<ul class="topnav right">
@@ -26,11 +25,18 @@
 		<h1>Minerva's car store - The best deals anywhere</h1>
 	</div>
 
-	<!-- News and other content -->
-	<p>News:</p>
-
+	<c:url value="/images/ford_focus.png" var="ford" />
+	<c:url value="/images/service.jpg" var="service" />
+	<div id="pc-left">
+		<img src="${ford}" alt="Ford" style="width: 350px; height: 300px;">
+	</div>
+	<div id="pc-right">
+		<img src="${service}" alt="Service"
+			style="width: 450px; height: 330px;">
+	</div>
+	<p id="news_table" align="justify">News:</p>
 	<!--  news table with design -->
-	<div class="tg-wrap" align="center" table-layout="fixed">
+	<div id="news_table" class="tg-wrap" align="center" table-layout="fixed">
 		<c:forEach var="article" items="${news_list}">
 			<table class="tg">
 				<tr>
