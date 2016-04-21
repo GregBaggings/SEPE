@@ -1,10 +1,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@page session="true"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <html>
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <c:url value="/css/base.css" var="cssURL" />
 <link rel="stylesheet" href="${cssURL}">
-<title>Admin Page</title>
+<title>Add new Service to the database</title>
 </head>
 <body>
 	<!-- Menu -->
@@ -17,21 +18,30 @@
 			<li><a href="javascript:formSubmit()">Logout</a></li>
 		</ul>
 	</ul>
+	<h2>Please enter the Service details:</h2>
+	<form:form method="POST" action="/CW/admin/list">
+		<table>
+			<tr>
+				<td><form:label path="name">Name</form:label></td>
+				<td><form:input path="name" /></td>
+			</tr>
+			<tr>
+				<td><form:label path="price">Price</form:label></td>
+				<td><form:input path="price" /></td>
+			</tr>
+			<tr>
+				<td><form:label path="onStock">onStock</form:label></td>
+				<td><form:input path="onStock" /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><input type="submit" value="Add Item" /></td>
+			</tr>
+		</table>
+	</form:form>
 
-	<h1>Please choose about the following features:</h1>
-	<li><a href=/CW/admin/addCar>Add Car product</a></li>
-	<li><a href=/CW/admin/addService>Add Service</a></li>
-	<li><a href=/CW/admin/removeCar>Remove Car</a></li>
-	<li><a href=/CW/admin/removeService>Remove Service</a></li>
-	<li><a href="/CW/admin/addNews">Add news to the Home Page</a></li>
-	<li><a href="/CW/admin/removeNews">Remove News from the Home Page</a></li>
-	<li><a href="/CW/admin/list">List of the databases</a></li>
-	
-
-	<!-- Logout stuff -->
 	<c:url value="/logout" var="logoutUrl" />
 
-	<!-- csrt for log out -->
+	<!-- csrt for log out-->
 	<form action="${logoutUrl}" method="post" id="logoutForm">
 		<input type="hidden" name="${_csrf.parameterName}"
 			value="${_csrf.token}" />
@@ -48,6 +58,5 @@
 		<p>Copyright 2016 &copy; Gergely Agnecz</p>
 		<p>Contact us at agnegerg@gmail.com</p>
 	</div>
-
 </body>
 </html>
