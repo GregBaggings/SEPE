@@ -27,14 +27,14 @@
 			</tr>
 			<tr>
 				<td><form:label path="price">Price</form:label></td>
-				<td><form:input path="price" /></td>
+				<td><form:input path="price"/></td>
 			</tr>
 			<tr>
 				<td><form:label path="onStock">onStock</form:label></td>
 				<td><form:input path="onStock" /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><input type="submit" value="Add Item" /></td>
+				<td colspan="2"><input id="addService" type="submit" value="Add Item" /></td>
 			</tr>
 		</table>
 	</form:form>

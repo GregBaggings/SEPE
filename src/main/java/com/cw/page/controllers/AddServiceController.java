@@ -28,21 +28,6 @@ public class AddServiceController {
 		return new ModelAndView("addService", "command", new Service());
 	}
 
-//	@ModelAttribute(value = "list_news")
-//	public List<News> getNewsList() {
-//		return newsDAO.findAll();
-//	}
-//
-//	@ModelAttribute(value = "list_cars")
-//	public List<Car> getCarList() {
-//		return carDAO.findAll();
-//	}
-//
-//	@ModelAttribute(value = "list_services")
-//	public List<Service> getServiceList() {
-//		return serviceDAO.findAll();
-//	}
-
 	@RequestMapping(value = "/admin/list", method = RequestMethod.POST)
 	public String addService(@ModelAttribute("SpringWeb") Service service, ModelMap model) {
 

@@ -26,7 +26,7 @@
 				<td><form:input path="newsId" /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><input type="submit" value="Delete" /></td>
+				<td colspan="2"><input id="removeNews" type="submit" value="Delete" /></td>
 			</tr>
 		</table>
 	</form:form>

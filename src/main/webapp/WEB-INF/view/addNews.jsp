@@ -21,10 +21,6 @@
 	<h2>Enter the news details:</h2>
 	<form:form method="POST" action="/CW/">
 		<table>
-<!-- 			<tr> -->
-<%-- 				<td><form:label path="newsId">newsId</form:label></td> --%>
-<%-- 				<td><form:input path="newsId" /></td> --%>
-<!-- 			</tr> -->
 			<tr>
 				<td><form:label path="date">date</form:label></td>
 				<td><form:input path="date" /></td>
@@ -38,7 +34,7 @@
 				<td><form:input path="content" /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><input type="submit" value="Push News" /></td>
+				<td colspan="2"><input id="addNews" type="submit" value="Push News" /></td>
 			</tr>
 		</table>
 	</form:form>

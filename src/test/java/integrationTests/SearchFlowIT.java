@@ -3,6 +3,7 @@ package integrationTests;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class SearchFlowIT {
@@ -13,9 +14,9 @@ public class SearchFlowIT {
 		WebDriver driver = new FirefoxDriver();
 		driver.manage().window().maximize();
 		driver.get(SEACRH_PAGE);
-		driver.findElement(By.name("searchKey")).sendKeys("Audi");
+		driver.findElement(By.name("searchKey")).sendKeys("Seat Ibiza");
 		driver.findElement(By.id("submission")).click();
-		driver.getPageSource().contains("Audi");
+		Assert.assertTrue(driver.getPageSource().contains("Seat Ibiza"));
 		driver.findElement(By.linkText("Back to the search")).click();
 		driver.quit();
 	}
