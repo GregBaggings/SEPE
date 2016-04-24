@@ -31,8 +31,10 @@ public class RemoveCarController {
 
 	@RequestMapping(value = "/admin/list_items_after_delete", method = RequestMethod.POST)
 	public String removeCar(@ModelAttribute("SpringWeb") Car car, ModelMap model) {
-
-		model.addAttribute("carID", car.getCarId());
+		if (car.getCarId() < 0 || car.getCarId() == null) {
+			return "redirect:/admin/removeCar";
+		} else
+			model.addAttribute("carID", car.getCarId());
 		try {
 			carDAO.deleteCar(car.getCarId());
 		} catch (EmptyResultDataAccessException e) {

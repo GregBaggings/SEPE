@@ -11,7 +11,7 @@ public class Car {
 	Integer carId;
 	String name;
 	int age;
-	int price;
+	Integer price;
 
 	public Integer getCarId() {
 		return carId;
@@ -41,7 +41,7 @@ public class Car {
 		return price;
 	}
 
-	public void setPrice(int price) {
+	public void setPrice(Integer price) {
 		this.price = price;
 	}
 }
