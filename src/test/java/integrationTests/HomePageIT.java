@@ -3,6 +3,7 @@ package integrationTests;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 
@@ -15,7 +16,7 @@ public class HomePageIT {
 		WebDriver driver = new FirefoxDriver();
 		driver.manage().window().maximize();
 		driver.get(HOME_PAGE);
-		driver.getPageSource().contains("Minerva's car store - The best deals anywhere");
+		Assert.assertTrue(driver.getPageSource().contains("Minerva's car store - The best deals anywhere"));
 		driver.quit();
 	}
 }
