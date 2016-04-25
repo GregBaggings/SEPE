@@ -18,8 +18,9 @@ public class SecurityRelatedTestsIT {
 		driver.manage().window().maximize();
 		driver.get(URL);
 		Assert.assertTrue(driver.getCurrentUrl().equals(EXPECTED_URL_AFTER_REDIRECT));
+		driver.quit();
 	}
-	
+
 	@Test
 	public void addCarOpenTest() {
 		String URL = "http://localhost:8080/CW/admin/addCar";
@@ -27,8 +28,9 @@ public class SecurityRelatedTestsIT {
 		driver.manage().window().maximize();
 		driver.get(URL);
 		Assert.assertTrue(driver.getCurrentUrl().equals(EXPECTED_URL_AFTER_REDIRECT));
+		driver.quit();
 	}
-	
+
 	@Test
 	public void addServiceOpenTest() {
 		String URL = "http://localhost:8080/CW/admin/addService";
@@ -36,8 +38,9 @@ public class SecurityRelatedTestsIT {
 		driver.manage().window().maximize();
 		driver.get(URL);
 		Assert.assertTrue(driver.getCurrentUrl().equals(EXPECTED_URL_AFTER_REDIRECT));
+		driver.quit();
 	}
-	
+
 	@Test
 	public void removeCarOpenTest() {
 		String URL = "http://localhost:8080/CW/admin/removeCar";
@@ -45,8 +48,9 @@ public class SecurityRelatedTestsIT {
 		driver.manage().window().maximize();
 		driver.get(URL);
 		Assert.assertTrue(driver.getCurrentUrl().equals(EXPECTED_URL_AFTER_REDIRECT));
+		driver.quit();
 	}
-	
+
 	@Test
 	public void removeServiceOpenTest() {
 		String URL = "http://localhost:8080/CW/admin/removeService";
@@ -54,8 +58,9 @@ public class SecurityRelatedTestsIT {
 		driver.manage().window().maximize();
 		driver.get(URL);
 		Assert.assertTrue(driver.getCurrentUrl().equals(EXPECTED_URL_AFTER_REDIRECT));
+		driver.quit();
 	}
-	
+
 	@Test
 	public void addNewsOpenTest() {
 		String URL = "http://localhost:8080/CW/admin/addNews";
@@ -63,8 +68,9 @@ public class SecurityRelatedTestsIT {
 		driver.manage().window().maximize();
 		driver.get(URL);
 		Assert.assertTrue(driver.getCurrentUrl().equals(EXPECTED_URL_AFTER_REDIRECT));
+		driver.quit();
 	}
-	
+
 	@Test
 	public void removeNewsOpenTest() {
 		String URL = "http://localhost:8080/CW/admin/removeNews";
@@ -72,8 +78,9 @@ public class SecurityRelatedTestsIT {
 		driver.manage().window().maximize();
 		driver.get(URL);
 		Assert.assertTrue(driver.getCurrentUrl().equals(EXPECTED_URL_AFTER_REDIRECT));
+		driver.quit();
 	}
-	
+
 	@Test
 	public void listTablesOpenTest() {
 		String URL = "http://localhost:8080/CW/admin/list";
@@ -81,6 +88,6 @@ public class SecurityRelatedTestsIT {
 		driver.manage().window().maximize();
 		driver.get(URL);
 		Assert.assertTrue(driver.getCurrentUrl().equals(EXPECTED_URL_AFTER_REDIRECT));
+		driver.quit();
 	}
-	
 }

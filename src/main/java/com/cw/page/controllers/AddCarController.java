@@ -1,5 +1,7 @@
 package com.cw.page.controllers;
 
+import java.security.Principal;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -24,34 +26,26 @@ public class AddCarController {
 	NewsDAO newsDAO;
 
 	@RequestMapping(value = "/admin/addCar", method = RequestMethod.GET)
-	public ModelAndView addCar() {
-		return new ModelAndView("addCar", "command", new Car());
+	public ModelAndView addCar(Principal loginChecker) {
+		if (loginChecker != null) {
+			return new ModelAndView("addCar", "command", new Car());
+		} else {
+			ModelAndView notLoggedIn = new ModelAndView("redirect:/");
+			return notLoggedIn;
+		}
 	}
 
-//	@ModelAttribute(value = "list_news")
-//	public List<News> getNewsList() {
-//		return newsDAO.findAll();
-//	}
-//
-//	@ModelAttribute(value = "list_cars")
-//	public List<Car> getCarList() {
-//		return carDAO.findAll();
-//	}
-//
-//	@ModelAttribute(value = "list_services")
-//	public List<Service> getServiceList() {
-//		return serviceDAO.findAll();
-//	}
-
 	@RequestMapping(value = "/admin/list_items", method = RequestMethod.POST)
-	public String addCar(@ModelAttribute("SpringWeb") Car car, ModelMap model) {
+	public String addCar(Principal loginChecker, @ModelAttribute("SpringWeb") Car car, ModelMap model) {
+		if (loginChecker != null) {
+			carDAO.saveNewCar(car);
+			model.addAttribute("list_cars", carDAO.findAll());
+			model.addAttribute("list_services", serviceDAO.findAll());
+			model.addAttribute("list_news", newsDAO.findAll());
 
-		carDAO.saveNewCar(car);
-		model.addAttribute("list_cars", carDAO.findAll());
-		model.addAttribute("list_services", serviceDAO.findAll());
-		model.addAttribute("list_news", newsDAO.findAll());
-
-		return "list_items";
-
+			return "list_items";
+		} else {
+			return "redirect:/";
+		}
 	}
 }
