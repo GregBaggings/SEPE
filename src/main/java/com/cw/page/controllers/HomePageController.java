@@ -27,7 +27,6 @@ public class HomePageController {
 	@RequestMapping(value = { "/", "/index" }, method = RequestMethod.GET)
 	public String homePage(ModelMap model) {
 		newsDAO.findTop5ByOrderByDateDesc();
-		// model.addAttribute("news_list", newsDAO.findTop5ByOrderByDateDesc());
 		return "index";
 	}
 }

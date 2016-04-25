@@ -1,5 +1,7 @@
 package com.cw.page.controllers;
 
+import java.security.Principal;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -24,18 +26,25 @@ public class AddServiceController {
 	NewsDAO newsDAO;
 
 	@RequestMapping(value = "/admin/addService", method = RequestMethod.GET)
-	public ModelAndView addService() {
-		return new ModelAndView("addService", "command", new Service());
+	public ModelAndView addService(Principal loginChecker) {
+		if (loginChecker != null) {
+			return new ModelAndView("addService", "command", new Service());
+		} else {
+			ModelAndView notLoggedIn = new ModelAndView("redirect:/");
+			return notLoggedIn;
+		}
 	}
 
 	@RequestMapping(value = "/admin/list", method = RequestMethod.POST)
-	public String addService(@ModelAttribute("SpringWeb") Service service, ModelMap model) {
-
-		serviceDAO.saveNewService(service);
-		model.addAttribute("list_cars", carDAO.findAll());
-		model.addAttribute("list_services", serviceDAO.findAll());
-		model.addAttribute("list_news", newsDAO.findAll());
-		return "list_items";
-
+	public String addService(Principal loginChecker, @ModelAttribute("SpringWeb") Service service, ModelMap model) {
+		if (loginChecker != null) {
+			serviceDAO.saveNewService(service);
+			model.addAttribute("list_cars", carDAO.findAll());
+			model.addAttribute("list_services", serviceDAO.findAll());
+			model.addAttribute("list_news", newsDAO.findAll());
+			return "list_items";
+		} else {
+			return "redirect:/";
+		}
 	}
 }

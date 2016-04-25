@@ -1,5 +1,7 @@
 package com.cw.page.controllers;
 
+import java.security.Principal;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -17,20 +19,28 @@ public class NewsPublisherController {
 	NewsDAO newsDAO;
 
 	@RequestMapping(value = "/admin/addNews", method = RequestMethod.GET)
-	public ModelAndView addNews() {
-		return new ModelAndView("addNews", "command", new News());
+	public ModelAndView addNews(Principal loginChecker) {
+		if (loginChecker != null) {
+			return new ModelAndView("addNews", "command", new News());
+		} else {
+			ModelAndView notLoggedIn = new ModelAndView("redirect:/");
+			return notLoggedIn;
+		}
 	}
-	
+
 	@RequestMapping(value = "/", method = RequestMethod.POST)
-	public String addNews(@ModelAttribute("SpringWeb") News news, ModelMap model){
+	public String addNews(Principal loginChecker, @ModelAttribute("SpringWeb") News news, ModelMap model) {
+		if (loginChecker != null) {
+			model.addAttribute("newId", news.getNewsId());
+			model.addAttribute("date", news.getDate());
+			model.addAttribute("title", news.getTitle());
+			model.addAttribute("content", news.getContent());
 
-		model.addAttribute("newId", news.getNewsId());
-		model.addAttribute("date", news.getDate());
-		model.addAttribute("title", news.getTitle());
-		model.addAttribute("content", news.getContent());
+			newsDAO.createNews(news);
 
-		newsDAO.createNews(news);
-
-		return "admin";	
+			return "admin";
+		} else {
+			return "redirect:/";
+		}
 	}
 }

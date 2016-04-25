@@ -1,5 +1,7 @@
 package com.cw.page.controllers;
 
+import java.security.Principal;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -16,18 +18,26 @@ public class RemoveNewsController {
 
 	@Autowired
 	NewsDAO newsDAO;
-	
+
 	@RequestMapping(value = "/admin/removeNews", method = RequestMethod.GET)
-	public ModelAndView removeCar() {
-		return new ModelAndView("removeNews", "command", new News());
+	public ModelAndView removeCar(Principal loginChecker) {
+		if (loginChecker != null) {
+			return new ModelAndView("removeNews", "command", new News());
+		} else {
+			ModelAndView notLoggedIn = new ModelAndView("redirect:/");
+			return notLoggedIn;
+		}
 	}
 
 	@RequestMapping(value = "/admin/deleteNews", method = RequestMethod.POST)
-	public String removeCar(@ModelAttribute("SpringWeb") News news, ModelMap model){
+	public String removeCar(Principal loginChecker, @ModelAttribute("SpringWeb") News news, ModelMap model) {
+		if (loginChecker != null) {
+			model.addAttribute("newsID", news.getNewsId());
 
-		model.addAttribute("newsID", news.getNewsId());
-
-		newsDAO.deleteNews(news.getNewsId());
-		return "admin";	
+			newsDAO.deleteNews(news.getNewsId());
+			return "admin";
+		} else {
+			return "redirect:/";
+		}
 	}
 }

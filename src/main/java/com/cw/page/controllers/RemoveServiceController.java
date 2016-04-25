@@ -1,5 +1,7 @@
 package com.cw.page.controllers;
 
+import java.security.Principal;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Controller;
@@ -25,22 +27,30 @@ public class RemoveServiceController {
 	ServiceDAO serviceDAO;
 
 	@RequestMapping(value = "/admin/removeService", method = RequestMethod.GET)
-	public ModelAndView removeCar() {
-		return new ModelAndView("removeService", "command", new Service());
+	public ModelAndView removeCar(Principal loginChecker) {
+		if (loginChecker != null) {
+			return new ModelAndView("removeService", "command", new Service());
+		} else {
+			ModelAndView notLoggedIn = new ModelAndView("redirect:/");
+			return notLoggedIn;
+		}
 	}
 
 	@RequestMapping(value = "/admin/list_items_after_delete_service", method = RequestMethod.POST)
-	public String removeCar(@ModelAttribute("SpringWeb") Service service, ModelMap model) {
+	public String removeCar(Principal loginChecker, @ModelAttribute("SpringWeb") Service service, ModelMap model) {
+		if (loginChecker != null) {
+			model.addAttribute("serviceId", service.getServiceId());
+			try {
+				serviceDAO.deleteService(service.getServiceId());
+			} catch (EmptyResultDataAccessException e) {
 
-		model.addAttribute("serviceId", service.getServiceId());
-		try {
-			serviceDAO.deleteService(service.getServiceId());
-		} catch (EmptyResultDataAccessException e) {
-
+			}
+			model.addAttribute("list_cars", carDAO.findAll());
+			model.addAttribute("list_services", serviceDAO.findAll());
+			model.addAttribute("list_news", newsDAO.findAll());
+			return "list_items";
+		} else {
+			return "redirect:/";
 		}
-		model.addAttribute("list_cars", carDAO.findAll());
-		model.addAttribute("list_services", serviceDAO.findAll());
-		model.addAttribute("list_news", newsDAO.findAll());
-		return "list_items";
 	}
 }
