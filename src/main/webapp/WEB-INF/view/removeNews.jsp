@@ -23,7 +23,7 @@
 		<table>
 			<tr>
 				<td><form:label path="newsId">newsID</form:label></td>
-				<td><form:input path="newsId" /></td>
+				<td><input id="newsId" name="newsId" required type="number"></td>
 			</tr>
 			<tr>
 				<td colspan="2"><input id="removeNews" type="submit" value="Delete" /></td>

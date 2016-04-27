@@ -23,15 +23,15 @@
 		<table>
 			<tr>
 				<td><form:label path="name">name</form:label></td>
-				<td><form:input path="name" /></td>
+				<td><input id="name" name="name" type="text" required></td>
 			</tr>
 			<tr>
 				<td><form:label path="age">age</form:label></td>
-				<td><form:input path="age" /></td>
+				<td><input id="age" name="age" type="number" required></td>
 			</tr>
 			<tr>
 				<td><form:label path="price">price</form:label></td>
-				<td><form:input path="price" /></td>
+				<td><input id="price" name="price" type="number" required></td>
 			</tr>
 			<tr>
 				<td colspan="2"><input id="addCar" type="submit" value="Add Item" /></td>

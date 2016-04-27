@@ -23,7 +23,7 @@
 		<table>
 			<tr>
 				<td><form:label path="carId">carId</form:label></td>
-				<td><form:input path="carId" /></td>
+				<td><input id="carId" name="carId" required type="number"></td>
 			</tr>
 			<tr>
 				<td colspan="2"><input id="removeCar" type="submit" value="Delete" /></td>
