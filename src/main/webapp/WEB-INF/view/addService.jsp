@@ -23,15 +23,15 @@
 		<table>
 			<tr>
 				<td><form:label path="name">Name</form:label></td>
-				<td><form:input path="name" /></td>
+				<td><input id="name" name="name" type="text" required></td>
 			</tr>
 			<tr>
 				<td><form:label path="price">Price</form:label></td>
-				<td><form:input path="price"/></td>
+				<td><input id="price" name="price" type="number" required></td>
 			</tr>
 			<tr>
 				<td><form:label path="onStock">onStock</form:label></td>
-				<td><form:input path="onStock" /></td>
+				<td><input id="onStock" name="onStock" type="text" required></td>
 			</tr>
 			<tr>
 				<td colspan="2"><input id="addService" type="submit" value="Add Item" /></td>

@@ -21,7 +21,6 @@ public class RemoveNewsIT {
 		driver.findElement(By.linkText("Remove News from the Home Page")).click();
 		driver.findElement(By.id("newsId")).sendKeys("0");
 		driver.findElement(By.id("removeNews")).click();
-		driver.findElement(By.linkText("List of the databases")).click();
 		Assert.assertTrue(!driver.getPageSource().contains("Test1"));
 		driver.quit();
 	}

@@ -23,7 +23,7 @@
 		<table>
 			<tr>
 				<td><form:label path="serviceId">serviceId</form:label></td>
-				<td><form:input path="serviceId" /></td>
+				<td><input id="serviceId" name="serviceId" required type="number"></td>
 			</tr>
 			<tr>
 				<td colspan="2"><input id="removeService" type="submit" value="Delete" /></td>

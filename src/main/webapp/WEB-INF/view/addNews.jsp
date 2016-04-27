@@ -23,15 +23,15 @@
 		<table>
 			<tr>
 				<td><form:label path="date">date</form:label></td>
-				<td><form:input path="date" /></td>
+				<td><input id="date" name="date" type="date" required></td>
 			</tr>
 			<tr>
 				<td><form:label path="title">title</form:label></td>
-				<td><form:input path="title" /></td>
+				<td><input id="title" name="title" type="text" required></td>
 			</tr>
 			<tr>
 				<td><form:label path="content">content</form:label></td>
-				<td><form:input path="content" /></td>
+				<td><input id="content" name="content" type="text" required></td>
 			</tr>
 			<tr>
 				<td colspan="2"><input id="addNews" type="submit" value="Push News" /></td>
