@@ -11,14 +11,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.cw.database.cars.CarDAO;
 import com.cw.database.news.News;
 import com.cw.database.news.NewsDAO;
+import com.cw.database.services.ServiceDAO;
 
 @Controller
 public class RemoveNewsController {
 
 	@Autowired
+	CarDAO carDAO;
+	@Autowired
 	NewsDAO newsDAO;
+	@Autowired
+	ServiceDAO serviceDAO;
 
 	@RequestMapping(value = "/admin/removeNews", method = RequestMethod.GET)
 	public ModelAndView removeCar(Principal loginChecker) {
@@ -39,8 +45,10 @@ public class RemoveNewsController {
 			newsDAO.deleteNews(news.getNewsId());
 			} catch (EmptyResultDataAccessException e) {
 
-			}
-			return "admin";
+			}model.addAttribute("list_cars", carDAO.findAll());
+			model.addAttribute("list_services", serviceDAO.findAll());
+			model.addAttribute("list_news", newsDAO.findAll());
+			return "list_items";
 		} else {
 			return "redirect:/";
 		}
