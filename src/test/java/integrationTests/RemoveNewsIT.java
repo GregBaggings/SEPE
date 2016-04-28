@@ -24,4 +24,19 @@ public class RemoveNewsIT {
 		Assert.assertTrue(!driver.getPageSource().contains("Test1"));
 		driver.quit();
 	}
+	
+	@Test
+	public void removeNewsNegativeTestWithEmptyForm(){
+		WebDriver driver = new FirefoxDriver();
+		driver.manage().window().maximize();
+		driver.get(HOME_PAGE);
+		driver.findElement(By.linkText("Login")).click();
+		driver.findElement(By.name("username")).sendKeys("admin");
+		driver.findElement(By.name("password")).sendKeys("admin");
+		driver.findElement(By.name("submit")).click();
+		driver.findElement(By.linkText("Remove News from the Home Page")).click();
+		driver.findElement(By.id("removeNews")).click();
+		Assert.assertTrue(driver.getCurrentUrl().equals("http://localhost:8080/CW/admin/removeNews"));
+		driver.quit();
+	}
 }

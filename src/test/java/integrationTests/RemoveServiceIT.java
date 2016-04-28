@@ -24,4 +24,19 @@ public class RemoveServiceIT {
 		Assert.assertTrue(!driver.getPageSource().contains("Repair for any Audi"));
 		driver.quit();
 	}
+	
+	@Test
+	public void removeServiceNegativeTestWithEmptyForm(){
+		WebDriver driver = new FirefoxDriver();
+		driver.manage().window().maximize();
+		driver.get(HOME_PAGE);
+		driver.findElement(By.linkText("Login")).click();
+		driver.findElement(By.name("username")).sendKeys("admin");
+		driver.findElement(By.name("password")).sendKeys("admin");
+		driver.findElement(By.name("submit")).click();
+		driver.findElement(By.linkText("Remove Service")).click();
+		driver.findElement(By.id("removeService")).click();
+		Assert.assertTrue(driver.getCurrentUrl().equals("http://localhost:8080/CW/admin/removeService"));
+		driver.quit();
+	}
 }
