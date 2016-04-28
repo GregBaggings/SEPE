@@ -29,4 +29,20 @@ public class PublishNewsIT {
 		Assert.assertTrue(driver.getPageSource().contains("Test Content"));
 		driver.quit();
 	}
+	
+	@Test
+	public void publishNewsNegativeTestWithEmptyForm() {
+		WebDriver driver = new FirefoxDriver();
+		driver.manage().window().maximize();
+		driver.get(HOME_PAGE);
+		driver.findElement(By.linkText("Login")).click();
+		driver.findElement(By.name("username")).sendKeys("admin");
+		driver.findElement(By.name("password")).sendKeys("admin");
+		driver.findElement(By.name("submit")).click();
+		driver.findElement(By.linkText("Add news to the Home Page")).click();
+		driver.findElement(By.id("date")).clear();
+		driver.findElement(By.id("addNews")).click();
+		Assert.assertTrue(driver.getCurrentUrl().equals("http://localhost:8080/CW/admin/addNews"));
+		driver.quit();
+	}
 }
