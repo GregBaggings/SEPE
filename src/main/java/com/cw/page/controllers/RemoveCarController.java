@@ -18,7 +18,6 @@ import com.cw.database.services.ServiceDAO;
 
 @Controller
 public class RemoveCarController {
-
 	@Autowired
 	CarDAO carDAO;
 	@Autowired
@@ -43,7 +42,6 @@ public class RemoveCarController {
 			try {
 				carDAO.deleteCar(car.getCarId());
 			} catch (EmptyResultDataAccessException e) {
-
 			}
 			model.addAttribute("list_cars", carDAO.findAll());
 			model.addAttribute("list_services", serviceDAO.findAll());
