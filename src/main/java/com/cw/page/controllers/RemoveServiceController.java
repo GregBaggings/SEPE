@@ -26,7 +26,7 @@ public class RemoveServiceController {
 	ServiceDAO serviceDAO;
 
 	@RequestMapping(value = "/admin/removeService", method = RequestMethod.GET)
-	public ModelAndView removeCar(Principal loginChecker) {
+	public ModelAndView removeService(Principal loginChecker) {
 		if (loginChecker != null) {
 			return new ModelAndView("removeService", "command", new Service());
 		} else {
