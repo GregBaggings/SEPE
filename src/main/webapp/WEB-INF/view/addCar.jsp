@@ -18,7 +18,7 @@
 			<li><a href="javascript:formSubmit()">Logout</a></li>
 		</ul>
 	</ul>
-	<h2>Please enter the car details:</h2>
+	<h2>Please enter the Car details:</h2>
 	<form:form method="POST" action="/CW/admin/list_items">
 		<table>
 			<tr>

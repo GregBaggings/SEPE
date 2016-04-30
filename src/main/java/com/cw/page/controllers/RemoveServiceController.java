@@ -18,7 +18,6 @@ import com.cw.database.services.ServiceDAO;
 
 @Controller
 public class RemoveServiceController {
-
 	@Autowired
 	CarDAO carDAO;
 	@Autowired
@@ -27,7 +26,7 @@ public class RemoveServiceController {
 	ServiceDAO serviceDAO;
 
 	@RequestMapping(value = "/admin/removeService", method = RequestMethod.GET)
-	public ModelAndView removeCar(Principal loginChecker) {
+	public ModelAndView removeService(Principal loginChecker) {
 		if (loginChecker != null) {
 			return new ModelAndView("removeService", "command", new Service());
 		} else {
@@ -37,13 +36,12 @@ public class RemoveServiceController {
 	}
 
 	@RequestMapping(value = "/admin/list_items_after_delete_service", method = RequestMethod.POST)
-	public String removeCar(Principal loginChecker, @ModelAttribute("SpringWeb") Service service, ModelMap model) {
+	public String removeService(Principal loginChecker, @ModelAttribute("SpringWeb") Service service, ModelMap model) {
 		if (loginChecker != null) {
 			model.addAttribute("serviceId", service.getServiceId());
 			try {
 				serviceDAO.deleteService(service.getServiceId());
 			} catch (EmptyResultDataAccessException e) {
-
 			}
 			model.addAttribute("list_cars", carDAO.findAll());
 			model.addAttribute("list_services", serviceDAO.findAll());

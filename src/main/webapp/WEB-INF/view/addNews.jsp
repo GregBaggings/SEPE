@@ -18,7 +18,7 @@
 			<li><a href="javascript:formSubmit()">Logout</a></li>
 		</ul>
 	</ul>
-	<h2>Enter the news details:</h2>
+	<h2>Enter the News details:</h2>
 	<form:form method="POST" action="/CW/">
 		<table>
 			<tr>

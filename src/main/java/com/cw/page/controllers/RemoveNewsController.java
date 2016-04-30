@@ -18,7 +18,6 @@ import com.cw.database.services.ServiceDAO;
 
 @Controller
 public class RemoveNewsController {
-
 	@Autowired
 	CarDAO carDAO;
 	@Autowired
@@ -37,14 +36,12 @@ public class RemoveNewsController {
 	}
 
 	@RequestMapping(value = "/admin/deleteNews", method = RequestMethod.POST)
-	public String removeCar(Principal loginChecker, @ModelAttribute("SpringWeb") News news, ModelMap model) {
-		if (loginChecker != null) {
-			
+	public String removeNews(Principal loginChecker, @ModelAttribute("SpringWeb") News news, ModelMap model) {
+		if (loginChecker != null) {	
 			model.addAttribute("newsID", news.getNewsId());
 			try {
 			newsDAO.deleteNews(news.getNewsId());
 			} catch (EmptyResultDataAccessException e) {
-
 			}model.addAttribute("list_cars", carDAO.findAll());
 			model.addAttribute("list_services", serviceDAO.findAll());
 			model.addAttribute("list_news", newsDAO.findAll());

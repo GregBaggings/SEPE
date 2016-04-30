@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <c:url value="/css/base.css" var="cssURL" />
 <link rel="stylesheet" href="${cssURL}">
-<title>Remove Product</title>
+<title>Remove Service</title>
 </head>
 <body>
 	<!-- Menu -->
@@ -18,7 +18,7 @@
 			<li><a href="javascript:formSubmit()">Logout</a></li>
 		</ul>
 	</ul>
-	<h2>Please enter the car details:</h2>
+	<h2>Please enter the serviceId which you want to remove:</h2>
 	<form:form method="POST" action="/CW/admin/list_items_after_delete_service">
 		<table>
 			<tr>

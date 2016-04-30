@@ -18,11 +18,11 @@
 			<li><a href="javascript:formSubmit()">Logout</a></li>
 		</ul>
 	</ul>
-	<h2>Please enter the news title to delete:</h2>
+	<h2>Please enter the newsId which you want to remove:</h2>
 	<form:form method="POST" action="/CW/admin/deleteNews">
 		<table>
 			<tr>
-				<td><form:label path="newsId">newsID</form:label></td>
+				<td><form:label path="newsId">newsId</form:label></td>
 				<td><input id="newsId" name="newsId" required type="number"></td>
 			</tr>
 			<tr>

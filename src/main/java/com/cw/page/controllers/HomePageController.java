@@ -21,7 +21,6 @@ public class HomePageController {
 	@ModelAttribute(value = "news_list")
 	public List<News> getNewsList() {
 		return newsDAO.findAll();
-
 	}
 
 	@RequestMapping(value = { "/", "/index" }, method = RequestMethod.GET)
